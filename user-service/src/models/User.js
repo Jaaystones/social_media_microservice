@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const argon2 = require("argon2");
 
-const userSchema = new moongose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -49,7 +49,7 @@ userSchema.pre('save', async function (next) {
   }
 });
 
-// Compared hashed password
+// Compared hashed password method
 userSchema.methods.comparePassword = async function(candidatePassword){
     try{
         return await argon2.verify(this.password, candidatePassword)

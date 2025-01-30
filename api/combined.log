@@ -1,0 +1,23 @@
+{"level":"info","message":"API Gateway is running on port 3000","service":"api-gateway","timestamp":"2025-01-30T16:23:24.211Z"}
+{"level":"info","message":"User service is running on port undefined","service":"api-gateway","timestamp":"2025-01-30T16:23:24.215Z"}
+{"level":"info","message":"Redis Url redis://localhost:6379","service":"api-gateway","timestamp":"2025-01-30T16:23:24.216Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-gateway","timestamp":"2025-01-30T16:26:50.372Z"}
+{"level":"info","message":"Request body, [object Object]","service":"api-gateway","timestamp":"2025-01-30T16:26:50.373Z"}
+{"level":"error","message":"Proxy error: connect ECONNREFUSED 127.0.0.1:3001","service":"api-gateway","timestamp":"2025-01-30T16:26:50.394Z"}
+{"level":"info","message":"API Gateway is running on port 3000","service":"api-gateway","timestamp":"2025-01-30T16:29:52.006Z"}
+{"level":"info","message":"User service is running on port undefined","service":"api-gateway","timestamp":"2025-01-30T16:29:52.009Z"}
+{"level":"info","message":"Redis Url redis://localhost:6379","service":"api-gateway","timestamp":"2025-01-30T16:29:52.010Z"}
+{"level":"info","message":"API Gateway is running on port 3000","service":"api-gateway","timestamp":"2025-01-30T16:30:19.869Z"}
+{"level":"info","message":"User service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-01-30T16:30:19.873Z"}
+{"level":"info","message":"Redis Url redis://localhost:6379","service":"api-gateway","timestamp":"2025-01-30T16:30:19.874Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-gateway","timestamp":"2025-01-30T16:30:36.716Z"}
+{"level":"info","message":"Request body, [object Object]","service":"api-gateway","timestamp":"2025-01-30T16:30:36.716Z"}
+{"level":"info","message":"Response received from User service: 200","service":"api-gateway","timestamp":"2025-01-30T16:30:37.479Z"}
+{"level":"info","message":"Received POST request to /api/auth/logout","service":"api-gateway","timestamp":"2025-01-30T16:32:00.841Z"}
+{"level":"info","message":"Request body, [object Object]","service":"api-gateway","timestamp":"2025-01-30T16:32:00.842Z"}
+{"level":"info","message":"Received POST request to /v1/auth/logout","service":"api-gateway","timestamp":"2025-01-30T16:32:30.246Z"}
+{"level":"info","message":"Request body, [object Object]","service":"api-gateway","timestamp":"2025-01-30T16:32:30.246Z"}
+{"level":"info","message":"Response received from User service: 200","service":"api-gateway","timestamp":"2025-01-30T16:32:30.566Z"}
+{"level":"info","message":"Received POST request to /v1/auth/signup","service":"api-gateway","timestamp":"2025-01-30T16:33:08.593Z"}
+{"level":"info","message":"Request body, [object Object]","service":"api-gateway","timestamp":"2025-01-30T16:33:08.594Z"}
+{"level":"info","message":"Response received from User service: 201","service":"api-gateway","timestamp":"2025-01-30T16:33:09.788Z"}
