@@ -20,7 +20,7 @@ mongoose
   .then(()=> logger.info("Connected to mongoDB"))
   .catch((e)=> logger.error('MongoDB connection error', e));
 
-  const redisClient = new Redis(process.env.REDIS_URL); 
+const redisClient = new Redis(process.env.REDIS_URL); 
 
 // Middleware
 app.use(helmet())

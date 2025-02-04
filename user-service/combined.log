@@ -144,3 +144,60 @@
 {"level":"info","message":"Connected to mongoDB","service":"user-service","timestamp":"2025-01-30T16:44:43.748Z"}
 {"level":"info","message":"User service running on port 3001","service":"user-service","timestamp":"2025-01-30T16:45:16.402Z"}
 {"level":"info","message":"Connected to mongoDB","service":"user-service","timestamp":"2025-01-30T16:45:19.474Z"}
+{"level":"info","message":"User service running on port 3001","service":"user-service","timestamp":"2025-02-03T22:09:01.366Z"}
+{"level":"info","message":"Connected to mongoDB","service":"user-service","timestamp":"2025-02-03T22:10:05.782Z"}
+{"level":"info","message":"Received POST' request to /api/auth/logout","service":"user-service","timestamp":"2025-02-03T22:23:26.439Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-03T22:23:26.440Z"}
+{"level":"info","message":"Logout route...","service":"user-service","timestamp":"2025-02-03T22:23:26.456Z"}
+{"level":"info","message":"Refresh token deleted for logout","service":"user-service","timestamp":"2025-02-03T22:23:28.213Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-03T22:23:40.341Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-03T22:23:40.342Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-03T22:23:40.345Z"}
+{"level":"info","message":"User service running on port 3001","service":"user-service","timestamp":"2025-02-04T13:33:35.647Z"}
+{"level":"info","message":"Connected to mongoDB","service":"user-service","timestamp":"2025-02-04T13:33:38.850Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:33:58.293Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:33:58.294Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:33:58.302Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:37:44.334Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:37:44.335Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:37:44.342Z"}
+{"level":"info","message":"Received POST' request to /api/auth/logout","service":"user-service","timestamp":"2025-02-04T13:42:14.260Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:42:14.261Z"}
+{"level":"info","message":"Logout route...","service":"user-service","timestamp":"2025-02-04T13:42:14.272Z"}
+{"level":"info","message":"Refresh token deleted for logout","service":"user-service","timestamp":"2025-02-04T13:42:14.963Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:42:18.810Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:42:18.811Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:42:18.821Z"}
+{"level":"info","message":"Received POST' request to /api/auth/logout","service":"user-service","timestamp":"2025-02-04T13:45:11.283Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:45:11.285Z"}
+{"level":"info","message":"Logout route...","service":"user-service","timestamp":"2025-02-04T13:45:11.288Z"}
+{"level":"info","message":"Refresh token deleted for logout","service":"user-service","timestamp":"2025-02-04T13:45:11.558Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:45:14.963Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:45:14.964Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:45:14.972Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:48:12.779Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:48:12.795Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:48:12.798Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:50:45.951Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:50:45.952Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:50:45.961Z"}
+{"level":"info","message":"User service running on port 3001","service":"user-service","timestamp":"2025-02-04T13:55:17.855Z"}
+{"level":"info","message":"Connected to mongoDB","service":"user-service","timestamp":"2025-02-04T13:55:22.694Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T13:56:58.895Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T13:56:58.896Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T13:56:58.903Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T14:12:27.421Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T14:12:27.423Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T14:12:27.439Z"}
+{"level":"warn","message":"Unregistered user!","service":"user-service","timestamp":"2025-02-04T14:12:27.723Z"}
+{"level":"info","message":"Received POST' request to /api/auth/signup","service":"user-service","timestamp":"2025-02-04T14:12:40.034Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T14:12:40.035Z"}
+{"level":"info","message":"Registration route...","service":"user-service","timestamp":"2025-02-04T14:12:40.054Z"}
+{"level":"warn","message":"User already exists","service":"user-service","timestamp":"2025-02-04T14:12:40.332Z"}
+{"level":"info","message":"Received POST' request to /api/auth/signup","service":"user-service","timestamp":"2025-02-04T14:20:39.948Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T14:20:39.949Z"}
+{"level":"info","message":"Registration route...","service":"user-service","timestamp":"2025-02-04T14:20:39.965Z"}
+{"buffer":{"data":[103,162,34,107,42,140,33,223,190,218,239,200],"type":"Buffer"},"level":"warn","message":"User created sucessfully","service":"user-service","timestamp":"2025-02-04T14:21:39.125Z"}
+{"level":"info","message":"Received POST' request to /api/auth/login","service":"user-service","timestamp":"2025-02-04T14:24:17.652Z"}
+{"level":"info","message":"Request Body [object Object]","service":"user-service","timestamp":"2025-02-04T14:24:17.654Z"}
+{"level":"info","message":"Login route...","service":"user-service","timestamp":"2025-02-04T14:24:17.658Z"}
