@@ -1,7 +1,9 @@
 const logger = require("../utils/logger");
 const jwt = require("jsonwebtoken");
 
+//extract token from header
 const validateToken = (req, res, next) => {
+  console.log(req.headers);  // Debugging log
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
 

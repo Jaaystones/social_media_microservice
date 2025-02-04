@@ -1,0 +1,1 @@
+1. user should be able to see only their posts asides the general feed
