@@ -10,8 +10,8 @@ const Redis = require("ioredis");
 const logger = require("./utils/logger");
 const { RedisStore } = require("rate-limit-redis");
 const { RateLimiterRedis } = require('rate-limiter-flexible');
-// const { connectToRabbitMQ, consumeEvent } = require("./utils/rabbitmq");
-// const { handlePostDeleted } = require("./eventHandlers/media-event-handlers");
+const { connectToRabbitMQ, consumeEvent } = require("./utils/rabbitmq");
+const { handlePostDeleted } = require("./events/media-event-handlers");
 
 const app = express();
 const PORT = process.env.PORT || 3003;
@@ -78,11 +78,23 @@ app.use("/api/media", routes);
 
 app.use(errorHandler);
 
+//connect to rabbitmq
+async function startServer(){
+  try{
+    await connectToRabbitMQ();
+    //consume all events
+    await consumeEvent('post.deleted', handlePostDeleted)
 
-app.listen(PORT, () => {
-    logger.info(`Media service running on port ${PORT}`);
-});
+    app.listen(PORT, () => {
+      logger.info(`Media service running on port ${PORT}`);
+    });
 
+  }catch(error){
+    logger.error('Failed to connect to server', error)
+    process.exit(1)
+  }
+}
+startServer();
 
 //unhandled promise rejection
 process.on("unhandledRejection", (reason, promise) => {
