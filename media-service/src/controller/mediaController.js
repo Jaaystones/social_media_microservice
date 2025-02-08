@@ -15,10 +15,10 @@ const uploadMedia = async (req, res) => {
       });
     }
 
-    const { originalName, mimetype, buffer } = req.file;
+    const { originalname, mimetype, buffer } = req.file;
     const userId = req.user.userId; // gotten from api gateway authentication
 
-    logger.info(`File details: name=${originalName}, type=${mimetype}`);
+    logger.info(`File details: name=${originalname}, type=${mimetype}`);
     logger.info("Upload to cloudinary started...");
 
     const cloudinaryUploadResult = await uploadMediaToCloudinary(req.file);
