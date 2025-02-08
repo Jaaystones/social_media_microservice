@@ -1,6 +1,6 @@
 const Post = require("../model/Post");
 const logger = require("../utils/logger");
-const { publishEvent } = require("../utils/eventListener");
+const { publishEvent } = require("../utils/rabbitmq");
 const { validateCreatePost } = require("../utils/validatePostModel");
 
 //Invalidate cached posts
@@ -36,12 +36,13 @@ const createPost = async (req, res) => {
 
     await newlyCreatedPost.save();
 
-    // await publishEvent("post.created", {
-    //   postId: newlyCreatedPost._id.toString(),
-    //   userId: newlyCreatedPost.user.toString(),
-    //   content: newlyCreatedPost.content,
-    //   createdAt: newlyCreatedPost.createdAt,
-    // });
+    //Create an event when creating after a post has been created
+    await publishEvent("post.created", {
+      postId: newlyCreatedPost._id.toString(),
+      userId: newlyCreatedPost.user.toString(),
+      content: newlyCreatedPost.content,
+      createdAt: newlyCreatedPost.createdAt,
+    });
 
     //delete new post from cache
     await invalidatePostCache(req, newlyCreatedPost._id.toString());
@@ -149,12 +150,12 @@ const deletePost = async (req, res) => {
       });
     }
 
-    // //publish post delete method ->
-    // await publishEvent("post.deleted", {
-    //   postId: post._id.toString(),
-    //   userId: req.user.userId,
-    //   mediaIds: post.mediaIds,
-    // });
+    //publish post delete method ->
+    await publishEvent("post.deleted", {
+      postId: post._id.toString(),
+      userId: req.user.userId,
+      mediaIds: post.mediaIds,
+    });
 
     await invalidatePostCache(req, req.params.id);
     res.json({
