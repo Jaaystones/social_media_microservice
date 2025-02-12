@@ -60,12 +60,12 @@ app.use((req, res, next)=> {
 
 //Implement Ip based rate limiting for sensitive endpoints
 const sensitiveEndpointsLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 10,
+    windowMs: 30 * 60 * 1000,
+    max: 50,
     standardHeaders: true,
     legacyHeaders: false,
     handler: (req, res) => {
-      logger.warn(`Endpoint rate limit exceeded for IP: ${req.ip}`);
+      logger.warn(`🚨Endpoint rate limit exceeded for IP: ${req.ip}`);
       res.status(429).json({ success: false, message: "Too many requests" });
     },
     store: new RedisStore({
