@@ -1,22 +1,29 @@
-const Search = require("../model/Search");
-const logger = require("../utils/logger");
-const redis = require("ioredis");
+const Search = require('../model/Search');
+const logger = require('../utils/logger');
 
-// Create Redis client
-const redisClient = redis.createClient();
+const CACHE_EXPIRATION = 300; // 5 minutes cache expiration (in seconds)
 
-redisClient.connect().catch((err) => {
-  logger.error("Redis connection error:", err);
-});
+// Function to invalidate cache
+async function invalidatePostCache(req, input) {
+  const cachedKey = `search:${input}`;
+  await req.redisClient.del(cachedKey);
 
-const CACHE_EXPIRATION = 300; // Cache expiration time in seconds (5 minutes)
+  // Delete all related search keys
+  const keys = await req.redisClient.keys("search:*");
+  if (keys.length > 0) {
+    await req.redisClient.del(keys);
+  }
+}
 
+// Search Controller with Redis Caching
 const searchPostController = async (req, res) => {
   logger.info("Search endpoint hit!");
+  
   try {
     const { query } = req.query;
 
     if (!query) {
+      logger.info("Query parameter required");
       return res.status(400).json({
         success: false,
         message: "Query parameter is required",
@@ -25,27 +32,28 @@ const searchPostController = async (req, res) => {
 
     const cacheKey = `search:${query}`;
 
-    // Check if cached data exists
-    const cachedResults = await redisClient.get(cacheKey);
+    // Check Redis cache
+    const cachedResults = await req.redisClient.get(cacheKey);
     if (cachedResults) {
-      logger.info("Cache hit for query:", query);
+      logger.info(`Cache hit for query: ${query}`);
       return res.json(JSON.parse(cachedResults));
     }
 
-    logger.info("Cache missed. Fetching from database for query:", query);
+    logger.info(`Cache missed. Fetching from database for query: ${query}`);
     const results = await Search.find(
-      {
-        $text: { $search: query },
-      },
-      {
-        score: { $meta: "textScore" },
-      }
+      { $text: { $search: query } },
+      { score: { $meta: "textScore" } }
     )
       .sort({ score: { $meta: "textScore" } })
       .limit(10);
 
-    // Cache the results
-    await redisClient.setex(cacheKey, CACHE_EXPIRATION, JSON.stringify(results));
+    if (results.length > 0) {
+      // Cache new search results
+      await req.redisClient.setex(cacheKey, CACHE_EXPIRATION, JSON.stringify(results));
+      
+      // Invalidate old cache entries
+      await invalidatePostCache(req, query);
+    }
 
     res.json(results);
   } catch (error) {
